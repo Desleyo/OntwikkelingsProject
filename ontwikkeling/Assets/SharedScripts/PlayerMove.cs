@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody rb;
-    public float moveSpeed = 5;
-    public float jumpForce = 5;
+    public float moveSpeed = 4;
+    public float jumpForce = 3;
     Vector3 moveDir;
     bool canJump = true;
 
@@ -32,6 +32,7 @@ public class PlayerMove : MonoBehaviour
         {
             canJump = false;
             rb.velocity = new Vector3(0, jumpForce, 0);
+            rb.AddForce(transform.forward * 50f);
         }
     }
 
