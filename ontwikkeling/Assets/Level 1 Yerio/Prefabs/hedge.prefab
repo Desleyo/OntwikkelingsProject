@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5789398596755284418}
   - component: {fileID: 3243460237183769588}
   - component: {fileID: 9097161905956103949}
+  - component: {fileID: -7708039948374475260}
   m_Layer: 0
   m_Name: hedge
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &-7708039948374475260
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350800935937414097}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6044533750662938222, guid: fb8977bcb14afbb40b96b743eef78a54, type: 3}

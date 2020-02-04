@@ -7,18 +7,25 @@ public class PlayerMove : MonoBehaviour
     Rigidbody rb;
     public float moveSpeed = 5;
     public float jumpForce = 5;
-    public bool canJump = true;
+    Vector3 moveDir;
+    bool canJump = true;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         //movement
-        rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime) +
-            (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime));
+        // rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime) +
+        //     (transform.right * Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime));
+
+        moveDir.x = Input.GetAxis("Horizontal");
+        moveDir.z = Input.GetAxis("Vertical");
+
+        transform.Translate(moveDir * moveSpeed * Time.fixedDeltaTime);
+
 
         //jump
         if (Input.GetButtonDown("Jump") && canJump)
